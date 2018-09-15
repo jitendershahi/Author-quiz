@@ -16,6 +16,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props.books)
     // let authorsData = null
     // if(this.props.authors){
     //   authorsData = this.props.authors
@@ -26,7 +27,7 @@ class App extends Component {
     return (
       <div className="container-fluid">
         <Hero />
-        <Turn  {...this.props.authors}/>
+        <Turn  {...this.props.authors} bookss={this.props.books}/>
         <Footer/>
       </div>
     
@@ -36,7 +37,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    authors:state.authors
+    authors:state.authors,
+    books:state.books
   }
 }
 
