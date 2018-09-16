@@ -2,6 +2,7 @@ import React from 'react'
 
 import Books from '../Books/Books'
 import classes from './Turn.css'
+import PropTypes from 'prop-types';
 
 export const Turn = (props) => {
 

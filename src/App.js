@@ -55,7 +55,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  return {
+  return { 
     callAuthors:() => dispatch(actions.getAuthorsSuccess()),
     selectAnswers:(title) => dispatch(actions.selectAnswer(title))
   }
