@@ -1,2 +1,4 @@
 export const GET_AUTHORS = "GET_AUTHORS"
 export const GET_OPTIONS = "GET_OPTIONS"
+
+export const SELECTED_ANSWER = "SELECTED_ANSWER"

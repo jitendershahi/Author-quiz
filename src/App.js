@@ -15,19 +15,30 @@ class App extends Component {
     this.props.callAuthors()
   }
 
+  selectAnswer = (title) => {
+    this.props.selectAnswers(title)
+  }
+
   render() {
-    console.log(this.props.books)
+    // console.log(this.props.books)
     // let authorsData = null
     // if(this.props.authors){
     //   authorsData = this.props.authors
     //   console.log(authorsData)
     // }
 
+    // answer = () => {
+    //   console.log('clickede')
+    // }
+
 
     return (
       <div className="container-fluid">
         <Hero />
-        <Turn  {...this.props.authors} bookss={this.props.books}/>
+        <Turn  {...this.props.authors}
+         bookss={this.props.books} 
+         highlight={this.props.highlight}
+         selectAnswer={(title) => this.selectAnswer(title)}/>
         <Footer/>
       </div>
     
@@ -38,13 +49,15 @@ class App extends Component {
 const mapStateToProps = state => {
   return {
     authors:state.authors,
-    books:state.books
+    books:state.books,
+    highlight:state.highlight
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    callAuthors:() => dispatch(actions.getAuthorsSuccess())
+    callAuthors:() => dispatch(actions.getAuthorsSuccess()),
+    selectAnswers:(title) => dispatch(actions.selectAnswer(title))
   }
 }
 
