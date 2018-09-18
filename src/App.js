@@ -8,6 +8,8 @@ import Turn from './components/Turn/Turn'
 import * as actions from './Actions/ActionCreators'
 
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+// import { Route } from 'react-router-dom'
 
 class App extends Component {
 
@@ -31,14 +33,20 @@ class App extends Component {
     //   console.log('clickede')
     // }
 
+    // let routes = (
+    //   <Route exact path="/" />
+    // )
+
 
     return (
       <div className="container-fluid">
+      {/* {routes} */}
         <Hero />
         <Turn  {...this.props.authors}
          bookss={this.props.books} 
          highlight={this.props.highlight}
          selectAnswer={(title) => this.selectAnswer(title)}/>
+         <Link to="/add">Go to author add form</Link>
         <Footer/>
       </div>
     

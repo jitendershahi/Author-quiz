@@ -1,0 +1,12 @@
+.authorform {
+    width: 80%;
+    margin: 50px 10%;
+}
+
+.authorform_input {
+    margin-bottom: 20px;
+}
+
+.authorform_input > label {
+    display: block;
+}
